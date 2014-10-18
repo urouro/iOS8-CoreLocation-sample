@@ -1,0 +1,17 @@
+//
+//  ShootLater-Prefix.pch
+//  ShootLater
+//
+//  Created by Kenta Nakai on 2014/10/18.
+//  Copyright (c) 2014年 UROURO. All rights reserved.
+//
+
+#ifdef DEBUG
+#define LOG(fmt, ...) NSLog((@"[%@] " fmt), NSStringFromSelector(_cmd), ##__VA_ARGS__);
+#define LOG_PRINT(fmt, ...) NSLog((@"%s " fmt), func, ##__VA_ARGS__);
+#define LOG_METHOD NSLog(@"%@/%@", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+#else
+#define LOG(...);
+#define LOG_METHOD;
+#define LOG_PRINT(...);
+#endif
